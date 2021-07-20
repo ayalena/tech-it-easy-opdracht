@@ -311,5 +311,116 @@ tvTwo.appendChild(tv2);
 
 
 ////////////////////////////////OPDRACHT 5/////////////////////////////////////////////////
+//5a Maak een functie die één tv-object als parameter verwacht en de naam op de volgende manier samenvoegt: [merk] [type] - [naam] zoals Philips 43PUS6504/12 - 4K TV of NIKKEI NH3216SMART - HD smart TV.
+//maak een functie, je levert een array aan van screen sizes
+//op basis van deze array maakt deze functie een string
+
+function joinProperties () {
+    const properties = inventory.map((inv) => {
+    return (inv.brand + " " + inv.type + " - " + inv.name).toString();
+  })
+  return properties;
+}
+
+// console.log(joinProperties(inventory));
+// console.log(properties[0]);
+console.log(joinProperties()[1]);
+
+//Maak een functie die één tv-prijs als parameter verwacht (zoals 379) en daar de volgende string van maakt: €379,-
+function price () {
+  const tvPrice = inventory.map((inv) => {
+    return `€${inv.price}`;
+  })
+  return tvPrice;
+}
+
+console.log(price()[0]);
+
+//Maak een functie die één screen-sizes array verwacht en de groottes op de volgende manier samenvoegt: [schermgrootte] inches ([schermgrootte omgerekend]cm)
+// function toCm (num) {
+//   return Math.round(num * 2.54);
+// }
+//
+// console.log(toCm(32));
+
+function inchesToCm () {
+  const cm = inventory.map((inv) => {
+    return inv.availableSizes + " inch (" + Math.round(inv.availableSizes * 2.54) + " cm)";
+  })
+  return cm;
+};
+
+console.log(inchesToCm()[3]);
+
+// let tvSize = inventory.map((size) => {
+//   return size.availableSizes;
+// });
+//
+// function sumOfSize (tvSize) {
+//   let stringWithAllSizes = "";
+//   for (let i = 0; i < tvSize.length; i++) {
+//     let size = Math.floor(tvSize[i] * 2.54);
+//     stringWithAllSizes = stringWithAllSizes + tvSize[i] + " inch " + "(" + size + " cm" + ")";
+//
+//   }
+//   return stringWithAllSizes;
+// };
+//
+// console.log(sumOfSize(tvSize)[0]);
+
+//Opdracht 5d: Zorg ervoor de informatie van één van de twee tv's zoals het voorbeeld wordt weergegeven op de pagina. Gebruik hiervoor de functies die je hebt gemaakt in opdracht 5a, 5b en 5c.
+//creeer element
+const tvInformation = document.createElement(`p`);
+//zet er iets in
+let newline = "\r\n";
+tvInformation.textContent = joinProperties()[0] + newline + newline + price()[0] + newline + newline + inchesToCm()[0];
+//sla referentie op in container
+const tvInfo = document.getElementById("tvInformation");
+//zet het in de container/dom
+tvInfo.appendChild(tvInformation);
+
+//5e Schrijf een functie die ALLE tv's weergeeft op de pagina zoals in het voorbeeld.
+//functie
+function allProperties () {
+
+    // const allInfo = inventory.map((inv) => {
+    //   return joinProperties(inv)[0] + newline + price(inv)[0] + newline + inchesToCm(inv)[0];
+    // })
+    // return allInfo;
+    // for (let i = 0; i < allInfo.length; i++) {
+    //   console.log(allProperties()[i]);
+    // }
+    // return allInfo;
+  for (let i = 0; i < inventory.length; i++) {
+    console.log(joinProperties(inventory)[i] + newline + price(inventory)[i] + newline + inchesToCm(inventory)[i]);
+  }
+}
+
+console.log(allProperties(inventory));
+
+// for (let i = 0; i < inventory.length; i++) {
+//   console.log(allProperties()[i]);
+// }
+
+//creeer element
+const allTvs = document.createElement(`p`);
+//zet er iets in
+allTvs.textContent = allProperties()[0];
+//sla referentie op in container
+const allTvInfo = document.getElementById("allTvInformation");
+//zet het in de container/dom
+allTvInfo.appendChild(allTvs);
+
+// //creeer element
+// const tvInformation = document.createElement(`p`);
+// //zet er iets in
+// let newline = "\r\n";
+// tvInformation.textContent = joinProperties()[0] + newline + newline + price()[0] + newline + newline + inchesToCm()[0];
+// //sla referentie op in container
+// const tvInfo = document.getElementById("tvInformation");
+// //zet het in de container/dom
+// tvInfo.appendChild(tvInformation);
+
+
 
 

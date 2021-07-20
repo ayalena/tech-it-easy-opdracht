@@ -9,3 +9,7 @@
 #sold-total-yield {
     color: green;
 }
+
+#tvInformation {
+    white-space: pre;
+}
