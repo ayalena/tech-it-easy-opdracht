@@ -441,68 +441,71 @@ function generateTvInformation () {
 // buttonOne.appendChild(button1);
 
 function sortOnPrice () {
-  const prices = inventory.sort((a, b) => {
+  let prices = "";
+  prices = inventory.map((a, b) => {
     return a.price - b.price;
   })
   console.log(prices);
 };
 
 //creeer element
-const button1 = document.createElement(`button`);
-//zet er iets in
-button1.textContent = "";
-//sla referentie op in container
-const buttonOne = document.getElementById("button1");
-//zet het in de container/dom
-buttonOne.appendChild(button1);
-
-button1.onclick = sortOnPrice;
-button1.addEventListener("click", sortOnPrice);
+// const button1 = document.createElement(`button`);
+// //zet er iets in
+// button1.textContent = "";
+// //sla referentie op in container
+// const buttonOne = document.getElementById("button1");
+// //zet het in de container/dom
+// buttonOne.appendChild(button1);
+//
+// button1.onclick = sortOnPrice;
+// button1.addEventListener("click", sortOnPrice);
 
 
 //get all the objects that got ambilight C
 function getAmbiLightTvs () {
 
-  inventory.filter((ambiLightTvs) => {
+  inventory.map((ambiLightTvs) => {
     if (ambiLightTvs.options.ambiLight === true) {
       return true;
     }
   })
+  console.log(getAmbiLightTvs());
 }
-console.log(getAmbiLightTvs());
 
-//creeer element
-const button2 = document.createElement(`button`);
-//zet er iets in
-button2.textContent = "AmbiLights";
-//sla referentie op in container
-const buttonTwo = document.getElementById("button2");
-//zet het in de container/dom
-buttonTwo.appendChild(button2);
 
-buttonTwo.onclick = sortOnPrice;
-buttonTwo.addEventListener("click", sortOnPrice);
+// //creeer element
+// const button2 = document.createElement(`button`);
+// //zet er iets in
+// button2.textContent = "AmbiLights";
+// //sla referentie op in container
+// const buttonTwo = document.getElementById("button2");
+// //zet het in de container/dom
+// buttonTwo.appendChild(button2);
+//
+// buttonTwo.onclick = getAmbiLightTvs;
+// buttonTwo.addEventListener("click", getAmbiLightTvs);
 
 //get all the objects that are sold out B
 function getSoldOutTvs () {
-  inventory.filter((soldOutTvs) => {
+  inventory.map((soldOutTvs) => {
     if (soldOutTvs.originalStock === soldOutTvs.sold) {
       return true;
     }
   })
+  console.log(getSoldOutTvs());
 }
-console.log(getSoldOutTvs());
+
 
 //first, make 3 buttons in html (X)
 //onclick events
 //creeer element
-const button3 = document.createElement(`button`);
-//zet er iets in
-button3.textContent = "Sold Out Items";
-//sla referentie op in container
-const buttonThree = document.getElementById("button3");
-//zet het in de container/dom
-buttonThree.appendChild(button3);
-
-buttonThree.onclick = sortOnPrice;
-buttonThree.addEventListener("click", sortOnPrice);
+// const button3 = document.createElement(`button`);
+// //zet er iets in
+// button3.textContent = "Sold Out Items";
+// //sla referentie op in container
+// const buttonThree = document.getElementById("button3");
+// //zet het in de container/dom
+// buttonThree.appendChild(button3);
+//
+// buttonThree.onclick = getSoldOutTvs;
+// buttonThree.addEventListener("click", getSoldOutTvs);
