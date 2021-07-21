@@ -1,0 +1,15 @@
+#items-left-to-sell {
+    color: crimson;
+}
+
+#total-yield {
+    color: blue;
+}
+
+#sold-total-yield {
+    color: green;
+}
+
+#tvInformation {
+    white-space: pre;
+}

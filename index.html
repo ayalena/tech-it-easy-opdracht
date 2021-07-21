@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Tech It Easy Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="items-left-to-sell"></div>
+<div id="total-yield"></div>
+<div id="sold-total-yield"></div>
+<div id="tv1"></div>
+<div id="tv2"></div>
+<div id="tvInformation"></div>
+<div id="allTvInformation"></div>
 
+<button onclick="getElementById('button1').innerHTML=sortOnPrice()">Sort on Price</button>
+<p id="button1"></p>
+<button onclick="getElementById('button2').innerHTML=getAmbiLightTvs()">AmbiLights</button>
+<p id="button2"></p>
+<button onclick="getElementById('button3').innerHTML=getSoldOutTvs()">Sold Out Items</button>
+<p id="button3"></p>
+
+<!--<button id="button1" onclick="sortOnPrice()">Sort on Price</button>-->
+<!--<div id="button2" onclick="getAmbiLightTvs()"></div>-->
+<!--<div id="button3" onclick="getSoldOutTvs()"></div>-->
+
+<script src="main.js"></script>
 </body>
 </html>
